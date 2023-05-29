@@ -1,264 +1,124 @@
-/*let name = prompt('Ingrese su nombre')
-let edad = number(prompt('Ingrese su edad'))
-alert('Bienvenido ' + name + ' de ' + edad + ' años');
-*/
-/*
-let numero1 = parseInt(prompt('Ingrese un numero'));
-let numero2 = Number(prompt('Ingrese otro numero'));
-//parseInt pasar a entero
-let suma = numero1 + numero2;
+//FOR EACH - Por cada uno
+/* arrayAlumnos.forEach((a, i) => {
+    console.log(a)
+    console.log(i)
+}) */
+//MAP
+/* const arrayAlumnos = ["Levi","Franco","Rodrigo"]
+arrayAlumnos.map((a, i) => {
+    console.log(a)
+    console.log(i)
+}) */
 
-alert('la suma de ambos numero da ' + suma) 
-*/
+/* let totalCompra = carritoP.reduce((a, p) => {
+    return a + p.precio
+},0) */
 
-/* alert('Tenemos distinstas promos dependiendo de su edad. Presione aceptar!')
-let edad = prompt('Ingrese su edad')
+//let menorA = carritoP.filter((p) => p.precio < 150000)
+const carritoLista = document.querySelector("#carritoP")
+const carritoP = [
+    {nombre: "Iphone 7", precio: 110000, espacio: "32gb", tamanio: "12 x 6cm"},
+    {nombre: "Iphone 8", precio: 120000, espacio: "64gb",tamanio: "12 x 8cm"},
+    {nombre: "Iphone 9", precio: 160000, espacio: "64gb", tamanio: "10 x 7cm"},
+    {nombre: "Iphone 10", precio: 180000, espacio: "128gb", tamanio: "12 x 8cm"},
+    {nombre: "Iphone 11", precio: 200000, espacio: "256gb",tamanio: "13 x 8"}
+]
 
-if (edad > 60 && edad < 70){
-    alert('tenes entre 60 y 70')
-}else alert('chao') */
+let entradaCelu
+do {
+    entradaCelu = prompt(`
+    Como te muestro los precio:
+    1)Mayor a menor
+    2)Menor a mayor
+    `)
+}while (entradaCelu !== '1' && entradaCelu !== '2');
+    
 
-// Tengo que reveer la clase 26/4 muy importante, switch, for, while, do while
-
-/* let i = 0
-while(i <= 6){
-    alert(i)
-    i++
-} */
-/* 
-let comida = prompt('¿Que desea ordenar?')
-
-switch(comida){
-    case 'hamburguesa':
-        console.log(`Pedido ${comida}, Valor $1000`)
-        break
-    case 'pizza' :
-        console.log(`Pedido ${comida}, Valor $1300`)
-        break
-    case 'lomo':
-        console.log(`Pedido ${comida}, valor $500`)
-        break
-    default :
-        console.log('No tenemos esto en nuestro menú')
-        break
-} */
-
-/* let peliculas = prompt(`
-1:Fast and furious 
-2:Fast and furious 2
-3:Fast and furious 3
-4:Fast and furious 4
-5:Fast and furious 5
-`)
-
-switch (peliculas) {
+switch (entradaCelu) {
     case '1':
-        console.log('Ejecutando Fast and furious')
+        const mayorAMenor = carritoP.sort((a, b) => b.precio - a.precio)
+        console.log(mayorAMenor)
+        //carrito es el indice con el cual vamos a llamar a los objetos de
+    for(carrito of mayorAMenor){
+        let mostrarCarrito = document.createElement("div")
+        mostrarCarrito.innerHTML =
+        `
+        <h3>Celular: ${carrito.nombre} </h3>
+        <h3>Precio : ${carrito.precio}</h3>
+        <h3>Espacio : ${carrito.espacio}</h3>
+        <h3>Tamaño : ${carrito.tamanio}</h3>
+        <button class="btn">Agregar al carrito</button>
+        `
+        document.body.appendChild(mostrarCarrito)
+       // let resultado = carritoP.filter((p) => p.nombre === "A")
+    }
         break;
     case '2':
-        console.log('Ejecutando Fast and furious 2')
-        break
-    case '3':
-        console.log('Ejecutando Fast and furious 3')
-        break
-    case '4':
-        console.log('Ejecutando Fast and furious 4')
-        break
-    case '5':
-        console.log('Ejecutando Fast and furious 5')
-        break        
-    default:
-        console.log('La opción ingresada no es correcta líder')
+
+    const menorAMayor = carritoP.sort((a, b) => a.precio - b.precio)
+        console.log(menorAMayor)
+    for(carrito of menorAMayor){
+        let mostrarCarrito = document.createElement("div")
+        mostrarCarrito.innerHTML =
+        
+        `
+        <h3>Celular: ${carrito.nombre} </h3>
+        <h3>Precio : ${carrito.precio}</h3>
+        <h3>Espacio : ${carrito.espacio}</h3>
+        <h3>Tamaño : ${carrito.tamanio}</h3>
+        <button class="btn">Agregar al carrito</button>
+        `
+        document.body.appendChild(mostrarCarrito) 
+
+    
+}
         break;
-} */
+    default:
+        break;
+}
  
-//CICLOS
-//Ciclos por conteo (FOR)
-//Ciclos por condicionales (WHILE - DO WHILE)
-
-/* let entrada = prompt('Ingrese texto o ESC para interrumpir')
-let texto = ''
-
-while (entrada != 'ESC' && entrada != 'esc' ){
-    texto += entrada + ' '
-    entrada = prompt('Ingrese texto o ESC para interrumpir')
-} 
-alert(texto)
- */
 
 
 
-/* let resultado = 0
-let parametro1 = Number(prompt('Ingrese 2 numero para ser sumados'))
-let parametro2 = Number(prompt('Ingrese el segundo número')) */
+/* //FILTER
+let resultado = carritoP.filter((p) => p.nombre === "A")
+//FIND trae solo el primero que encuentra
+let resultado2 = carritoP.find((p) => p.nombre === "A")
+console.log(resultado) */
+ //Math.ceil redondear a numero superior
+ //Math.floor redondear a numero inferior
+  //Math.round redondear a numero entero
+//  (Math.round(Math.random() * 10)) NUMERO RANDOM ENTERO
 
-
-/* function sumar(){
-    let parametro1 = Number(prompt('Ingrese 2 numero para ser sumados'))
-    let parametro2 = Number(prompt('Ingrese el segundo número'))
-    let resultado = parametro1 + parametro2
-    console.log(resultado)
-}
-sumar() */
-/* function respuesta(){
-    console.log(sumar())
-}
-respuesta() */
-/* function respuesta(){
-    console.log(respuesta)
-}
-
-respuesta(resultado) */
-
-
-function caso1() {
-    let precioBase = 50000
-    let caso1 = prompt('Tenemos \nOpción 1) Economica blanca, \nOpción 2) Colores basicos, \nOpción 3) Texturas y vidriadas. Escriba solo el numero')
-    // let precioFinal 
-    if(caso1 == '1'){
-        precioBase 
-        descuento()
-        console.log('EL total es de ' + precioBase)
-    
-    }else if(caso1 == '2'){
-        precioBase += 10000 
-        descuento()
-        console.log('EL total es de ' + precioBase)
-
-    }else if(caso1 == '3'){
-        precioBase += 20000 
-        descuento()
-        console.log('EL total es de ' + precioBase)
-        
+/* 
+class producto {
+    constructor(nombre, precio){
+        this.nombre = nombre.toUpperCase();
+        this.precio =  parseFloat(precio);
+        this.vendido = false
     }
-    function descuento(){
-        let NewCliente = prompt('Es tu primer compra? SI, NO')
-            if(NewCliente == "SI" || (NewCliente == "si") ){
-                precioBase -= 2500
-                alert('tenes un descuento de 2500')
-            }else{console.log('No hay descuento')
-        }
-       }
-}
-function caso2() {
-    let precioBase = 20000
-    let caso2 = prompt('Tenemos \nOpción 1) Bajomesada blanco con pileta económica, \nOpción 2) Bajomesada de color con pileta mediana, \nOpción 3) Vidrio o textura con pileta a elección. \nEscriba solo el numero')
-
-    if(caso2 == '1'){
-        precioBase 
-        descuento()
-        console.log('EL total es de ' + precioBase)
-    
-    }else if(caso2 == '2'){
-        precioBase += 5000 
-        descuento()
-        console.log('EL total es de ' + precioBase)
-
-    }else if(caso2 == '3'){
-        precioBase += 10000 
-        descuento()
-        console.log('EL total es de ' + precioBase)
-        
+    sumarIva(){
+        this.precio = this.precio * 1.21;
+        console.log(parseFloat(this.precio))
     }
-    function descuento(){
-        let NewCliente = prompt('Es tu primer compra? SI, NO')
-            if(NewCliente == "SI" || (NewCliente == "si") ){
-                precioBase -= 2500
-                alert('tenes un descuento de 2500')
-            }else{console.log('No hay descuento')
-            }
-        }
-}
-
-function caso3() {
-    let precioBase = 10000
-    let caso3 = prompt('Tenemos \nOpción 1) Pileta chica, \nOpción 2) Pileta mediana, \nOpción 3) Premium Pileta Grande. \nEscriba solo el numero')
-    
-    if(caso3 == '1'){
-        precioBase 
-        descuento()
-        console.log('EL total es de ' +precioBase)
-    
-    }else if(caso3 == '2'){
-        precioBase += 5000 
-        descuento()
-        console.log('EL total es de ' + precioBase)
-
-    }else if(caso3 == '3'){
-        precioBase += 10000 
-        descuento()
-        console.log('EL total es de ' +precioBase)
-        
+    vender(){
+        this.vendido = true;
     }
-    function descuento(){
-        let NewCliente = (prompt('Es tu primer compra? SI, NO')) 
-            if(NewCliente == "SI" || (NewCliente == "si") ){
-                precioBase -= 2500
-                alert('tenes un descuento de 2500')
-            }else{console.log('No hay descuento')
-            }
-        }
+}
+const productop1 = new producto("Iphone 11", "300000")
+const productop2 = new producto("Iphone 12","350000")
+productop1.sumarIva()
+productop2.sumarIva() */
+
+/* function primero(segundo){
+    setTimeout(function(){
+        console.log("PRIMERO");
+        segundo()
+    }, 5000)
 }
 
-
-
-let inicio = prompt('opciones: \nOpción 1: Amoblamiento completo \nOpcion 2: Bajo mesada con pileta \nOpción 3:Solo Pileta');
-    switch (inicio) {
-        case "1":
-            caso1()
-            break;
-        case '2':
-            caso2()
-            break
-        case '3':
-            caso3()
-            break
-        default:
-            console.log('Ninguna opción es valida')
-            break;
-    }
-
-
-// acaaaaaaaaaaaaaaaaaaaaaa
-/* const producto = {
-    //propiedades
-    //clave : valor
-    nombre: "Monitor de 24 pulgadas",
-    precio: 10000,
-    disponible: true
+function segundo(){
+    console.log("SEGUNDO")
 }
-//Agregando una propiedad
-producto.imagen = "image.jpg"
-//Eliminando propiedades
-delete producto.disponible
-//Modificar propiedades
-producto.disponible = false
-// console.log(producto)
 
-console.log(producto) */
-
-/* function producto(nombre, precio, espacio, tamanio){
-    this.nombre = nombre
-    this.precio = precio
-    this.espacio = espacio
-    this.tamanio = tamanio
-    this.disponible = true
-}
-const producto2 = new producto("Iphone 11", "$100000", "64gb", "10cm x 7cm")
-const producto3 = new producto("Iphone 12", "$140000", "128gb", "12cm x 7cm")
-const producto4 = new producto("Iphone 13", "$160000", "128gb", "14cm x 8cm")
-let practicaBienvenida = prompt("Tenemos estos productos, elija uno  \n1 Iphone 11  \n2 Iphone 12  \n3 Iphone 13")
-
-switch (practicaBienvenida) {
-    case "1":
-        console.log(producto2)
-        break;
-    case "2":
-        console.log(producto3)
-        break
-    case "3":
-        console.log(producto4)
-        break
-    default:
-        break;
-} */
+primero(segundo) */
