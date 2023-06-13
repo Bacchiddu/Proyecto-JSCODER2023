@@ -280,3 +280,71 @@ function calcularOperacion(a, b, operacion){
     return operacion(a, b)
 }
 console.log(calcularOperacion(9, 3, multiplicar)) */
+
+/* let entradaCelu
+do {
+    entradaCelu = prompt(`
+    Como te muestro los precio:
+    1)Mayor a menor
+    2)Menor a mayor
+    `)
+}while (entradaCelu !== '1' && entradaCelu !== '2');
+   
+//const carritoLista = document.querySelector("#carritoP")
+
+switch (entradaCelu) {
+    case '1':
+        const mayorAMenor = carritoP.sort((a, b) => b.precio - a.precio)
+        console.log(mayorAMenor)
+        const container = document.querySelector(".produc");
+        //carrito es el indice con el cual vamos a llamar a los objetos de
+    for(carrito of mayorAMenor){
+        let mostrarCarrito = document.createElement("div")
+        mostrarCarrito.innerHTML =
+        `
+
+
+                <h3>Celular: ${carrito.nombre} </h3>
+                <h3>Precio : ${carrito.precio}</h3>
+                <h3>Espacio : ${carrito.espacio}</h3>
+                <h3>Tamaño : ${carrito.tamanio}</h3>
+                <button class="btn">Agregar al carrito</button>
+
+        `
+        container.appendChild(mostrarCarrito)
+       // let resultado = carritoP.filter((p) => p.nombre === "A")
+    }
+        break;
+    case '2':
+
+    const menorAMayor = carritoP.sort((a, b) => a.precio - b.precio)
+        console.log(menorAMayor)
+    for(carrito of menorAMayor){
+        let mostrarCarrito = document.createElement("div")
+        mostrarCarrito.innerHTML =
+        
+        `
+        <h3>Celular: ${carrito.nombre} </h3>
+        <h3>Precio : ${carrito.precio}</h3>
+        <h3>Espacio : ${carrito.espacio}</h3>
+        <h3>Tamaño : ${carrito.tamanio}</h3>
+        <button class="btn">Agregar al carrito</button>
+        `
+        document.body.appendChild(mostrarCarrito) 
+
+    
+}
+        break;
+    default:
+        break;
+} */
+ 
+/* let primerClick = document.querySelector(".menorA")
+primerClick.addEventListener("click", () =>{
+    console.log('click')
+}) */
+/* let totalCompra = carritoP.reduce((a, p) => {
+    return a + p.precio
+},0) */
+
+//let menorA = carritoP.filter((p) => p.precio < 150000)
